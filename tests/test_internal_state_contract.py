@@ -155,7 +155,8 @@ class TestScopedWritePermissions:
     @pytest.fixture
     def version_config(self):
         """Load version.json."""
-        with open(".aget/version.json") as f:
+        version_file = Path(__file__).parent.parent / ".aget/version.json"
+        with open(version_file) as f:
             return json.load(f)
 
     def test_advisory_capabilities_present(self, version_config):
@@ -238,7 +239,8 @@ class TestInstanceTypeConsistency:
     @pytest.fixture
     def version_config(self):
         """Load version.json."""
-        with open(".aget/version.json") as f:
+        version_file = Path(__file__).parent.parent / ".aget/version.json"
+        with open(version_file) as f:
             return json.load(f)
 
     def test_instance_type_is_aget(self, version_config):
@@ -267,7 +269,8 @@ class TestProtocolDocumentation:
 
     def test_internal_state_section_exists(self):
         """AGENTS.md must have Internal State Management section."""
-        with open("AGENTS.md") as f:
+        agents_md = Path(__file__).parent.parent / "AGENTS.md"
+        with open(agents_md) as f:
             content = f.read()
 
         assert "Internal State Management" in content, \
@@ -275,7 +278,8 @@ class TestProtocolDocumentation:
 
     def test_wake_protocol_mentions_internal_state(self):
         """Wake Protocol section must reference internal state."""
-        with open("AGENTS.md") as f:
+        agents_md = Path(__file__).parent.parent / "AGENTS.md"
+        with open(agents_md) as f:
             content = f.read()
 
         # Check for enhanced wake protocol
@@ -286,7 +290,8 @@ class TestProtocolDocumentation:
 
     def test_wind_down_protocol_mentions_internal_state(self):
         """Wind Down Protocol section must reference internal state writes."""
-        with open("AGENTS.md") as f:
+        agents_md = Path(__file__).parent.parent / "AGENTS.md"
+        with open(agents_md) as f:
             content = f.read()
 
         # Check for enhanced wind down protocol
@@ -296,7 +301,8 @@ class TestProtocolDocumentation:
 
     def test_scoped_write_permissions_documented(self):
         """AGENTS.md must document scoped write permissions."""
-        with open("AGENTS.md") as f:
+        agents_md = Path(__file__).parent.parent / "AGENTS.md"
+        with open(agents_md) as f:
             content = f.read()
 
         assert "Scoped Write Permissions" in content or \
@@ -311,7 +317,8 @@ class TestBoundaryEnforcement:
     @pytest.fixture
     def version_config(self):
         """Load version.json."""
-        with open(".aget/version.json") as f:
+        version_file = Path(__file__).parent.parent / ".aget/version.json"
+        with open(version_file) as f:
             return json.load(f)
 
     def test_cannot_execute(self, version_config):
