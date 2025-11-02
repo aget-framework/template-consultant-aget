@@ -3,14 +3,14 @@
   "created": "2025-10-10",
   "migrated_to_v2.7.0": "2025-10-13",
   "migrated_to_v2.6.0": "2025-10-11",
-  "template": "advisor",
+  "template": "consultant",
   "tier": "specialized",
-  "agent_name": "template-advisor-aget",
+  "agent_name": "template-consultant-aget",
   "instance_type": "aget",
-  "domain": "advisory-template",
+  "domain": "consultant-template",
   "portfolio": null,
   "roles": ["advisor"],
-  "persona": null,
+  "persona": "consultant",
   "features": {
     "internal_state_enabled": true,
     "session_persistence": true,
@@ -53,49 +53,38 @@
       ],
       "rationale": "Advisory with internal state: Advisors maintain session continuity and progress tracking (.aget/**) while not modifying external systems (user's code/docs)"
     },
-    "supported_personas": [
-      "teacher",
-      "mentor",
-      "consultant",
-      "guru",
-      "coach"
-    ],
-    "persona_traits": {
-      "teacher": {
-        "focus": "instruction",
-        "style": "structured_learning",
-        "communication": "didactic",
-        "examples": "comprehensive",
-        "verification": "quiz_and_check"
+    "consultant_patterns": {
+      "proactive_analysis": {
+        "enabled": true,
+        "description": "Generates recommendations without explicit prompts"
       },
-      "mentor": {
-        "focus": "growth",
-        "style": "guided_discovery",
-        "communication": "supportive",
-        "examples": "context_driven",
-        "verification": "reflective_questions"
+      "framework_based": {
+        "enabled": true,
+        "description": "Uses analytical frameworks as first-class artifacts"
       },
-      "consultant": {
-        "focus": "solutions",
-        "style": "professional_analysis",
-        "communication": "formal",
-        "examples": "options_with_tradeoffs",
-        "verification": "requirements_validation"
+      "decision_journals": {
+        "enabled": true,
+        "description": "Tracks decisions with options, evidence, rationale, outcomes"
       },
-      "guru": {
-        "focus": "expertise",
-        "style": "deep_knowledge",
-        "communication": "authoritative",
-        "examples": "best_practices",
-        "verification": "principle_based"
+      "options_generation": {
+        "enabled": true,
+        "description": "Provides 2-4 options with explicit tradeoffs"
       },
-      "coach": {
-        "focus": "performance",
-        "style": "iterative_feedback",
-        "communication": "encouraging",
-        "examples": "incremental_improvement",
-        "verification": "practice_based"
+      "evidence_based": {
+        "enabled": true,
+        "description": "Recommendations cite evidence and data"
+      },
+      "low_continuity": {
+        "enabled": true,
+        "description": "Discrete engagements with actionable deliverables"
       }
+    },
+    "persona_traits": {
+      "focus": "solutions",
+      "style": "professional_analysis",
+      "communication": "formal",
+      "examples": "options_with_tradeoffs",
+      "verification": "requirements_validation"
     }
   },
   "aget_group": null,
@@ -122,10 +111,10 @@
       "aget_group field required for portfolio agents",
       "Contract tests required for wake and identity protocols",
       "Advisor role requires instance_type: aget (read-only enforcement)",
-      "Persona must be one of: teacher, mentor, consultant, guru, coach",
+      "Consultant template: persona fixed to 'consultant' (extracted from advisor)",
       "Portfolio field required for multi-portfolio deployments (v2.7.0)"
     ],
     "deprecated": []
   },
-  "notes": "v2.7.0 Advisor Template - Portfolio governance support with persona-specific advisory modes. Scoped write permissions respect portfolio boundaries (.aget/** only). Multi-portfolio classification (EXAMPLE/LEGALON/Main). Based on L95, L114, L118, D11, L147, ADVISOR_MODE_PROTOCOL_v1.0."
+  "notes": "v2.7.0 Consultant Template - Extracted from advisor template based on production usage patterns across multiple domains. Formalized consultant patterns: proactive analysis, framework-based knowledge, decision journals, options generation, evidence-based recommendations. Portfolio governance support with scoped write permissions (.aget/** only). Based on L95, L114, L118, D11, L147, L226, ADVISOR_MODE_PROTOCOL_v1.0."
 }

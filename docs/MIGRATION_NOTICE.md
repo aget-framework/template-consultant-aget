@@ -2,12 +2,12 @@
 
 ## Strategic Documents Have Moved
 
-The following strategic governance documents have been migrated to their proper home in [aget-aget](https://github.com/aget-framework/aget):
+The following strategic governance documents have been migrated to their proper home in [aget-aget](https://github.com/aget-framework/aget-aget):
 
 ### Migrated Documents
-- **AGET_COGNITIVE_SPECTRUM.md** → [aget-aget/vision/COGNITIVE_SPECTRUM.md](https://github.com/aget-framework/aget/blob/main/vision/COGNITIVE_SPECTRUM.md)
-- **AGET_AGET_CHARTER.md** → [aget-aget/governance/CHARTER.md](https://github.com/aget-framework/aget/blob/main/governance/CHARTER.md)
-- **AGET_AGET_NEXT_ACTIONS.md** → [aget-aget/governance/NEXT_ACTIONS.md](https://github.com/aget-framework/aget/blob/main/governance/NEXT_ACTIONS.md)
+- **AGET_COGNITIVE_SPECTRUM.md** → [aget-aget/vision/COGNITIVE_SPECTRUM.md](https://github.com/aget-framework/aget-aget/blob/main/vision/COGNITIVE_SPECTRUM.md)
+- **AGET_AGET_CHARTER.md** → [aget-aget/governance/CHARTER.md](https://github.com/aget-framework/aget-aget/blob/main/governance/CHARTER.md)
+- **AGET_AGET_NEXT_ACTIONS.md** → [aget-aget/governance/NEXT_ACTIONS.md](https://github.com/aget-framework/aget-aget/blob/main/governance/NEXT_ACTIONS.md)
 
 ## Why This Migration?
 
@@ -45,4 +45,4 @@ The following strategic governance documents have been migrated to their proper 
 - ✅ Contribution flow documented
 
 ---
-*For the latest strategic vision, see [aget-aget](https://github.com/aget-framework/aget)*
+*For the latest strategic vision, see [aget-aget](https://github.com/aget-framework/aget-aget)*

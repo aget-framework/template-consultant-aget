@@ -484,7 +484,7 @@ See `.aget/examples/` for complete persona configurations:
 ## Support
 
 **Questions or issues?**
-- File issues: [aget-aget repo](https://github.com/aget-framework/aget/issues) with `[advisor-template]` prefix
+- File issues: [aget-aget repo](https://github.com/aget-framework/aget-aget/issues) with `[advisor-template]` prefix
 - Review: [AGENTS.md](../../AGENTS.md) for complete advisor documentation
 - Check: [ADVISOR_CAPABILITY_MATRIX.md](ADVISOR_CAPABILITY_MATRIX.md) for capability boundaries
 

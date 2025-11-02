@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/aget-framework/aget/schemas/session_metadata_v1.0.json",
+  "$id": "https://github.com/aget-framework/aget-aget/schemas/session_metadata_v1.0.json",
   "title": "AGET Session Metadata",
   "description": "Schema for AGET session metadata v1.0.0",
   "type": "object",

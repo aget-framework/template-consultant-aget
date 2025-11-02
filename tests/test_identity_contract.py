@@ -86,7 +86,9 @@ def test_portfolio_field_exists():
         assert "portfolio" in data, "portfolio field missing in version.json (required in v2.7.0+)"
 
         # Portfolio must be None (template/unassigned) or valid classification
+        # Note: This template accepts any portfolio string or None
+        # Specific portfolio names are user-defined
         portfolio = data["portfolio"]
-        valid_portfolios = [None, "main", "example", "legalon"]
-        assert portfolio in valid_portfolios, \
-            f"Invalid portfolio value: '{portfolio}' (must be one of: {valid_portfolios})"
+        # Template should have portfolio = null (unassigned)
+        assert portfolio is None or isinstance(portfolio, str), \
+            f"Invalid portfolio value: '{portfolio}' (must be None or string)"

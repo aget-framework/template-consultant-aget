@@ -262,7 +262,7 @@ git clone https://github.com/aget-framework/template-advisor-aget.git my-{domain
 ## Support
 
 **Questions about which template to use?**
-- File issue: [aget-aget hub](https://github.com/aget-framework/aget/issues) with `[template-selection]` prefix
+- File issue: [aget-aget hub](https://github.com/aget-framework/aget-aget/issues) with `[template-selection]` prefix
 - Review: This comparison matrix
 - Check: Template README.md files for feature details
 

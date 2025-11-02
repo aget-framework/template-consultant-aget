@@ -3,7 +3,7 @@
 ## Important Notice
 Strategic governance and vision documents have moved to their proper home:
 
-**→ [aget-aget](https://github.com/aget-framework/aget)**
+**→ [aget-aget](https://github.com/aget-framework/aget-aget)**
 
 ## What Lives Where
 
@@ -43,9 +43,9 @@ aget-aget (Vision) → aget-cli-agent-template (Implementation) → Your Fork (C
 
 ## Migrated Documents
 The following documents now live in aget-aget:
-- `docs/AGET_COGNITIVE_SPECTRUM.md` → [aget-aget/vision/](https://github.com/aget-framework/aget/tree/main/vision)
-- `docs/AGET_AGET_CHARTER.md` → [aget-aget/governance/](https://github.com/aget-framework/aget/tree/main/governance)
-- `AGET_AGET_NEXT_ACTIONS.md` → [aget-aget/governance/](https://github.com/aget-framework/aget/tree/main/governance)
+- `docs/AGET_COGNITIVE_SPECTRUM.md` → [aget-aget/vision/](https://github.com/aget-framework/aget-aget/tree/main/vision)
+- `docs/AGET_AGET_CHARTER.md` → [aget-aget/governance/](https://github.com/aget-framework/aget-aget/tree/main/governance)
+- `AGET_AGET_NEXT_ACTIONS.md` → [aget-aget/governance/](https://github.com/aget-framework/aget-aget/tree/main/governance)
 
 ---
 *Governance separation established: 2025-09-25*

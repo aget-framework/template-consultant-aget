@@ -32,7 +32,7 @@ aget-cli-agent-template (This Repo)
          ├── Forked by → Organization A → their-aget-private
          ├── Forked by → Team B → custom-aget-lab
          ├── Forked by → Individual C → personal-aget
-         └── Reference Lab → aget-framework/aget
+         └── Reference Lab → aget-framework/aget-aget
 ```
 
 ## Contribution Criteria

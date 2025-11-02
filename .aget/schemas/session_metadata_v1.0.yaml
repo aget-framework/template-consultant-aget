@@ -90,7 +90,7 @@ fields:
     example:
       - number: 29
         title: "Session Metadata Standard v1.0"
-        url: "https://github.com/aget-framework/aget/issues/29"
+        url: "https://github.com/aget-framework/aget-aget/issues/29"
 
   commits:
     type: array
@@ -236,7 +236,7 @@ learnings:
 issues_filed:
   - number: 29
     title: "Session Metadata Standard"
-    url: "https://github.com/aget-framework/aget/issues/29"
+    url: "https://github.com/aget-framework/aget-aget/issues/29"
 commits:
   - hash: "af45bdc"
     message: "vocabulary: Expand to v1.1.0"

@@ -28,7 +28,7 @@
 
 ```bash
 # One-line installation
-curl -sSL https://raw.githubusercontent.com/aget-framework/aget/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/aget-framework/template-worker-aget/main/install.sh | bash
 
 # Tell your AI assistant
 "hey"  # Initializes session and shows project status
@@ -77,5 +77,5 @@ Thanks to early testers and contributors who helped shape AGET into a universal 
 
 **Documentation**: [Full Docs](https://github.com/aget-framework/aget-cli-agent-template/tree/main/docs)
 **License**: MIT
-**Author**: Gabor Melli
+**Author**: AGET Framework Contributors
 **Website**: [CLI Agent Template Framework](https://www.aget-framework.com/RKB/CLI_Agent_Template_Framework)
