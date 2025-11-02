@@ -26,9 +26,9 @@
 
 #### ❌ BAD Examples (Exposes Private Info):
 ```markdown
-- **my-AGET-aget** - Gabor's private agent
-- **my-CCB-aget** - Personal implementation
-- **/Users/gabormelli/github/...** - Personal paths
+- **user-private-agent** - User's private agent example
+- **user-personal-aget** - Personal implementation example
+- **/Users/username/github/...** - Personal paths
 ```
 
 ## Template README Guidelines

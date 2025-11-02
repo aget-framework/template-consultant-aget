@@ -220,7 +220,7 @@ Do you need to modify files or execute commands with side effects?
 | Template | Status | Public Availability | Stability |
 |----------|--------|---------------------|-----------|
 | **template-worker-aget** | ✅ Stable | Public (aget-framework/template-worker-aget) | v2.5.0 |
-| **template-supervisor-aget** | 🚧 Stabilizing | Private (gmelli/template-supervisor-aget) | v2.5.0 |
+| **template-supervisor-aget** | 🚧 Stabilizing | Private (aget-framework/template-supervisor-aget) | v2.5.0 |
 | **template-advisor-aget** | ✅ Stable | Public (aget-framework/template-advisor-aget) | v2.5.0 |
 
 **Expected Public Release**:
@@ -262,7 +262,7 @@ git clone https://github.com/aget-framework/template-advisor-aget.git my-{domain
 ## Support
 
 **Questions about which template to use?**
-- File issue: [aget-aget hub](https://github.com/gmelli/aget-aget/issues) with `[template-selection]` prefix
+- File issue: [aget-aget hub](https://github.com/aget-framework/aget-aget/issues) with `[template-selection]` prefix
 - Review: This comparison matrix
 - Check: Template README.md files for feature details
 
