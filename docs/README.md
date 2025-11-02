@@ -139,8 +139,8 @@ This directory contains comprehensive documentation for the Aget framework and w
 ## External Resources
 
 **Framework Organization**: https://github.com/aget-framework
-**Hub Repository** (issues, coordination): https://github.com/aget-framework/aget
-**Migration Guide** (v2.4): https://github.com/aget-framework/aget/blob/main/docs/v2.4_MIGRATION_GUIDE.md
+**Hub Repository** (issues, coordination): https://github.com/aget-framework/aget-aget
+**Migration Guide** (v2.4): https://github.com/aget-framework/aget-aget/blob/main/docs/v2.4_MIGRATION_GUIDE.md
 
 ---
 

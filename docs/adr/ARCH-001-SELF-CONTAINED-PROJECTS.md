@@ -2,7 +2,7 @@
 
 **Date**: 2025-09-27
 **Status**: Accepted
-**Deciders**: Gabor Melli, my-AGET-aget
+**Deciders**: AGET Framework Team
 **Category**: Core Architecture
 **Confidence**: Very High
 **Supersedes**: Implicit dependency assumptions
