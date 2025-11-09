@@ -9,7 +9,7 @@ Works with Claude Code, Cursor, Aider, Windsurf, and other CLI coding agents.
 
 ## Project Context
 
-**template-consultant-aget** - Consultant Advisory Agent Template v2.7.0
+**template-consultant-aget** - Consultant Advisory Agent Template v2.8.0
 
 ### Purpose
 Template for creating consultant-style advisory agents focused on proactive analysis, framework-based knowledge organization, and evidence-based decision support. Extracted from advisor template based on production usage showing 100% consultant persona adoption across multiple domains. Portfolio governance support with scoped write permissions (.aget/** only). Enforces advisory boundaries through contract tests and capability declarations.
@@ -29,11 +29,11 @@ Template for creating consultant-style advisory agents focused on proactive anal
 - **Framework-based**: Analytical frameworks as first-class artifacts
 - **Evidence-driven**: Recommendations cite data and prior outcomes
 - **Hybrid enforcement**: Declarations + contract tests
-- **Portfolio-aware**: Respects portfolio boundaries in scoped writes (v2.7.0)
+- **Portfolio-aware**: Respects portfolio boundaries in scoped writes (v2.8.0)
 
 ---
 
-## Portfolio Configuration (v2.7.0)
+## Portfolio Configuration (v2.8.0)
 
 **Purpose**: Organize advisor agents by sensitivity level for appropriate handling and governance.
 
