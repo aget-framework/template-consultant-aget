@@ -1067,6 +1067,10 @@ my-{domain}-advisor-aget/
 │   ├── docs/                 # Domain-specific documentation
 │   ├── evolution/            # Learning and decision tracking
 │   └── checkpoints/          # State snapshots
+├── .memory/                  # Layer 4: Advisor relationship state (v2.9+)
+│   ├── clients/              # Client-specific context
+│   └── engagements/          # Engagement tracking
+├── sessions/                 # Layer 5: Session logs and work artifacts
 ├── AGENTS.md                 # This file (agent configuration)
 ├── CLAUDE.md                 # Symlink to AGENTS.md
 ├── tests/
@@ -1076,6 +1080,101 @@ my-{domain}-advisor-aget/
 ├── workspace/                # Private workspace for analysis
 └── README.md                 # Public-facing documentation
 ```
+
+---
+
+## .memory/ Directory (Layer 4 - Advisors Only)
+
+**Purpose**: Store advisor-specific relationship state, client context, and engagement tracking.
+
+**New in v2.9**: Formal Layer 4 for advisor agents to maintain ongoing client relationships and engagement state separate from framework knowledge (.aget/) and work product (sessions/).
+
+### The .memory/ Boundary Test
+
+**Question**: Does this represent ongoing relationship state with a specific client/engagement?
+
+- **YES** → `.memory/` (client context, engagement tracking, relationship history)
+- **NO** → `.aget/` (framework knowledge, process learnings) or `sessions/` (work product, deliverables)
+
+### What Belongs in .memory/
+
+✅ **Client relationship state:**
+- Client background, preferences, communication style
+- Goals, challenges, context
+- Interaction history, key insights
+- Session continuity notes
+
+✅ **Engagement tracking:**
+- Project scope, objectives, milestones
+- Progress tracking, status updates
+- Engagement-specific deliverables
+- Action items and follow-ups
+
+✅ **Relationship continuity:**
+- What worked/didn't work with this client
+- Lessons learned specific to this engagement
+- Customizations for this relationship
+
+### What Does NOT Belong in .memory/
+
+❌ **Framework knowledge** → Store in `.aget/evolution/`:
+- Process learnings that apply broadly
+- Methodology patterns
+- Tool usage patterns
+- General best practices
+
+❌ **Work product** → Store in `sessions/`:
+- Session logs and conversation records
+- Analysis documents
+- Recommendations and reports
+- Client-facing deliverables
+
+❌ **Configuration** → Store in `.aget/`:
+- Agent identity and version
+- Capability declarations
+- Specifications and contracts
+
+### Structure
+
+```
+.memory/
+├── clients/              # Client-specific context and relationship state
+│   ├── {client_id}/     # Per-client directory
+│   │   ├── context.yaml # Client background, preferences, goals
+│   │   ├── history.md   # Interaction history, key insights
+│   │   └── notes/       # Session notes, observations
+│   └── .gitkeep
+├── engagements/          # Engagement-specific state
+│   ├── {engagement_id}/ # Per-engagement directory
+│   │   ├── brief.yaml   # Engagement scope, objectives
+│   │   ├── progress.md  # Status tracking, milestones
+│   │   └── artifacts/   # Engagement-specific deliverables
+│   └── .gitkeep
+└── README.md            # Usage guidelines (see .memory/README.md)
+```
+
+### Privacy Considerations
+
+**If your advisor handles sensitive information**, consider:
+- Adding sensitive paths to `.gitignore`
+- Using placeholders in examples (`{client_id}`, `{engagement_id}`)
+- Following your organization's data governance standards
+- Establishing data retention policies
+
+### When to Use .memory/
+
+**Use .memory/** when you need to:
+- Track ongoing client relationships across multiple sessions
+- Maintain engagement state and progress
+- Preserve client-specific context and preferences
+- Store relationship history that informs future interactions
+
+**Don't use .memory/** for:
+- Single-session consultations (use `sessions/` only)
+- Framework improvements (use `.aget/evolution/`)
+- General domain knowledge (use `.aget/docs/`)
+
+**See also**: `.memory/README.md` for detailed usage guidelines and examples.
 
 ---
 
