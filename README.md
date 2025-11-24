@@ -4,10 +4,10 @@
 
 Transform any domain into an AI consultant that provides strategic analysis, options frameworks, and decision support without modifying systems. Specialized for proactive, framework-based advisory work.
 
-**Current Version**: v2.7.0 "Consultant Pattern"
+**Current Version**: v2.9.0 "Consultant Pattern"
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![AGET Framework](https://img.shields.io/badge/AGET-v2.7.0-green.svg)](https://github.com/aget-framework)
+[![AGET Framework](https://img.shields.io/badge/AGET-v2.9.0-green.svg)](https://github.com/aget-framework)
 
 ---
 
@@ -86,7 +86,7 @@ claude .
 ```
 You: hey
 
-AI: my-domain-consultant-aget v2.7.0 (Consultant)
+AI: my-domain-consultant-aget v2.9.0 (Consultant)
     🎯 Mode: ADVISORY (consultant pattern)
     📊 Domain: your-specialty
 
