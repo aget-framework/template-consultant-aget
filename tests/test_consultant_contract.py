@@ -28,7 +28,7 @@ SKIP_TEMPLATE = pytest.mark.skipif(
 
 def test_instance_type_is_aget():
     """Consultant agents must be read-only (instance_type == 'aget')."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -42,7 +42,7 @@ def test_instance_type_is_aget():
 
 def test_template_is_consultant():
     """Consultant agents must declare template as 'consultant'."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -56,7 +56,7 @@ def test_template_is_consultant():
 
 def test_role_includes_advisor():
     """Consultant agents must include 'advisor' in roles array."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -74,7 +74,7 @@ def test_role_includes_advisor():
 
 def test_persona_is_consultant():
     """Consultant agents must have persona set to 'consultant'."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -89,7 +89,7 @@ def test_persona_is_consultant():
 
 def test_advisory_capabilities_read_only():
     """Consultant agents must declare read_only capability as 'scoped'."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -112,7 +112,7 @@ def test_advisory_capabilities_read_only():
 
 def test_no_action_capabilities():
     """Consultant agents must not have unrestricted action capabilities."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -139,7 +139,7 @@ def test_no_action_capabilities():
 
 def test_consultant_patterns_declared():
     """Consultant agents must declare consultant_patterns section."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -159,7 +159,7 @@ def test_consultant_patterns_declared():
 
 def test_consultant_patterns_complete():
     """Consultant agents must declare all 6 consultant patterns."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -195,7 +195,7 @@ def test_consultant_patterns_complete():
 
 def test_consultant_patterns_enabled():
     """All consultant patterns must be enabled by default."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -212,7 +212,7 @@ def test_consultant_patterns_enabled():
 
 def test_write_scope_declared():
     """Consultant agents with 'scoped' permissions must declare write_scope section."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -237,7 +237,7 @@ def test_write_scope_declared():
 
 def test_write_scope_paths_valid():
     """Write scope allowed_paths must be internal (.aget/* only)."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -258,7 +258,7 @@ def test_write_scope_paths_valid():
 
 def test_scoped_write_maintains_external_readonly():
     """Scoped writes must explicitly forbid external file modification."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -286,7 +286,7 @@ def test_scoped_write_maintains_external_readonly():
 
 def test_persona_traits_declared():
     """Consultant agents should declare persona_traits for consistent behavior."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -309,19 +309,19 @@ def test_persona_traits_declared():
 def test_consultant_directories_exist():
     """Consultant agents must have consultant-specific internal directories."""
     # Analysis directory for proactive analysis pattern
-    analysis_dir = Path(__file__).parent.parent / ".aget/analysis")
+    analysis_dir = Path(__file__).parent.parent / ".aget/analysis"
     assert analysis_dir.exists() and analysis_dir.is_dir(), \
         ".aget/analysis/ directory required for proactive analysis pattern"
 
     # Evidence directory for evidence-based recommendations pattern
-    evidence_dir = Path(__file__).parent.parent / ".aget/evidence")
+    evidence_dir = Path(__file__).parent.parent / ".aget/evidence"
     assert evidence_dir.exists() and evidence_dir.is_dir(), \
         ".aget/evidence/ directory required for evidence-based recommendations pattern"
 
 
 def test_consultant_pattern_descriptions():
     """Consultant pattern descriptions must be non-empty and meaningful."""
-    version_file = Path(__file__).parent.parent / ".aget/version.json")
+    version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
@@ -369,8 +369,8 @@ def test_memory_engagements_directory_exists():
 
 def test_sessions_at_root():
     """Sessions must be at root (sessions/), not in .aget/sessions/ (v2.9 standard)."""
-    sessions_root = Path("sessions")
-    sessions_aget = Path(__file__).parent.parent / ".aget/sessions")
+    sessions_root = Path(__file__).parent.parent / "sessions"
+    sessions_aget = Path(__file__).parent.parent / ".aget/sessions"
 
     # sessions/ at root is recommended (not strictly required for new templates)
     # This is more of a migration check, templates start fresh
