@@ -32,13 +32,13 @@ jobs:
 
     - name: Verify test count
       run: |
-        # Verify we have exactly 55 contract tests
+        # Verify we have exactly 61 contract tests (updated v2.10.0)
         TEST_COUNT=$(pytest tests/test_consultant_contract.py tests/test_identity_contract.py tests/test_internal_state_contract.py tests/test_wake_contract.py --collect-only -q | tail -1 | awk '{print $1}')
-        if [ "$TEST_COUNT" != "55" ]; then
-          echo "ERROR: Expected 55 contract tests, found $TEST_COUNT"
+        if [ "$TEST_COUNT" != "61" ]; then
+          echo "ERROR: Expected 61 contract tests, found $TEST_COUNT"
           exit 1
         fi
-        echo "✓ Contract test count validated: 55 tests"
+        echo "✓ Contract test count validated: 61 tests"
 
   privacy-validation:
     runs-on: ubuntu-latest
@@ -165,6 +165,6 @@ jobs:
     - name: All checks passed
       run: |
         echo "✅ All CI checks passed!"
-        echo "   - Contract tests: 55/55 passing"
+        echo "   - Contract tests: 61/61 passing"
         echo "   - Privacy validation: Clean"
         echo "   - Template validation: Valid"
