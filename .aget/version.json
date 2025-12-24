@@ -1,7 +1,7 @@
 {
-  "aget_version": "2.10.0",
+  "aget_version": "2.11.0",
   "created": "2025-10-10",
-  "updated": "2025-12-13",
+  "updated": "2025-12-24",
   "migrated_to_v2.8.0": "2025-11-08",
   "migrated_to_v2.7.0": "2025-10-13",
   "migrated_to_v2.6.0": "2025-10-11",
@@ -121,5 +121,8 @@
     ],
     "deprecated": []
   },
-  "notes": "v2.7.0 Consultant Template - Extracted from advisor template based on production usage patterns across multiple domains. Formalized consultant patterns: proactive analysis, framework-based knowledge, decision journals, options generation, evidence-based recommendations. Portfolio governance support with scoped write permissions (.aget/** only). Based on L95, L114, L118, D11, L147, L226, ADVISOR_MODE_PROTOCOL_v1.0."
+  "notes": "v2.7.0 Consultant Template - Extracted from advisor template based on production usage patterns across multiple domains. Formalized consultant patterns: proactive analysis, framework-based knowledge, decision journals, options generation, evidence-based recommendations. Portfolio governance support with scoped write permissions (.aget/** only). Based on L95, L114, L118, D11, L147, L226, ADVISOR_MODE_PROTOCOL_v1.0.",
+  "migration_history": [
+    "v2.10.0 -> v2.11.0: 2025-12-24 (Memory Architecture + L352 Traceability + Version Migration)"
+  ]
 }
