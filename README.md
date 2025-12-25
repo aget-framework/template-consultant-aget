@@ -497,7 +497,7 @@ Part of the [AGET Framework](https://github.com/aget-framework) - Universal agen
 - [template-advisor-aget](https://github.com/aget-framework/template-advisor-aget) - Multi-persona advisory (teacher/mentor/guru/coach)
 - [template-worker-aget](https://github.com/aget-framework/template-worker-aget) - General-purpose, configurable
 - [template-developer-aget](https://github.com/aget-framework/template-developer-aget) - Code analysis specialist
-- [template-supervisor-aget](https://github.com/aget-framework/template-supervisor-aget) - Fleet coordination
+- [template-spec-engineer-aget](https://github.com/aget-framework/template-spec-engineer-aget) - Specification engineering
 
 ---
 
