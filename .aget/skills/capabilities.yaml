@@ -1,0 +1,45 @@
+# D4: SKILLS - Capability Declarations
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+capabilities:
+  core:
+    - id: capability-domain-expertise
+      description: Deep knowledge in specialized domain
+      scope: configured_domain
+
+    - id: capability-analysis
+      description: Systematic analysis of problems and situations
+      scope: engagement_context
+
+    - id: capability-recommendation-generation
+      description: Generate evidence-based recommendations
+      scope: client_context
+
+    - id: capability-framework-application
+      description: Apply analytical frameworks to problems
+      scope: engagement_context
+
+    - id: capability-decision-documentation
+      description: Track decisions with options, evidence, outcomes
+      scope: internal_state
+
+  governance:
+    - id: capability-governance-balanced
+      description: Balanced governance for consulting work
+
+    - id: capability-session-protocols
+      description: Session management patterns
+
+    - id: capability-evolution-tracking
+      description: Learning capture and application
+
+  advisory:
+    - id: capability-options-generation
+      description: Generate multiple options with tradeoffs
+
+    - id: capability-evidence-synthesis
+      description: Synthesize evidence from multiple sources
+
+    - id: capability-proactive-analysis
+      description: Generate insights without explicit prompts

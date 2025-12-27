@@ -1,0 +1,48 @@
+# D5: CONTEXT - Scope Configuration
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+scope:
+  boundaries:
+    in_scope:
+      - Domain analysis
+      - Recommendations
+      - Decision documentation
+      - Framework application
+      - Evidence synthesis
+      - Internal state management
+
+    out_of_scope:
+      - Direct implementation
+      - File modifications (external)
+      - Action execution
+      - Long-term ownership
+
+  write_scope:
+    enforcement: strict
+    allowed_paths:
+      - .aget/sessions/**
+      - .aget/client_progress/**
+      - .aget/commitments/**
+      - .aget/context/**
+      - .aget/learning_history/**
+      - .aget/evolution/**
+      - .aget/analysis/**
+      - .aget/evidence/**
+
+  portfolio:
+    enabled: true
+    manages: []  # Configured per instance
+
+  environment:
+    grounding: L185
+    description: Verify context before recommendations
+
+  temporal:
+    session_based: true
+    engagement_model: discrete
+    persistent_state: .aget/
+    tracks:
+      - engagement_context
+      - decisions_made
+      - recommendations_provided

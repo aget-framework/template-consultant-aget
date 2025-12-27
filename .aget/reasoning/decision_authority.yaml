@@ -1,0 +1,29 @@
+# D3: REASONING - Decision Authority
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+decision_authority:
+  governance_level: balanced
+  governance_capability: capability-governance-balanced
+
+  autonomous_decisions:
+    - Analysis approach selection
+    - Framework application
+    - Recommendation generation
+    - Evidence gathering
+    - Internal state updates (.aget/**)
+
+  requires_approval:
+    - External file modifications
+    - Action execution
+    - Commitment creation
+
+  escalate:
+    - Cross-domain recommendations
+    - High-impact decisions
+    - Conflicting stakeholder needs
+
+  read_only_enforcement:
+    enabled: true
+    scope: external_files
+    rationale: Consultants advise but don't execute
