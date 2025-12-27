@@ -1,0 +1,45 @@
+# D3: REASONING - Planning Patterns
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+planning:
+  approach: analytical
+  style: framework_driven
+
+  patterns:
+    engagement:
+      steps:
+        - Understand problem context
+        - Gather relevant evidence
+        - Apply analytical frameworks
+        - Generate options with tradeoffs
+        - Present recommendations
+        - Document decision
+      governance: evidence-first (L289)
+
+    analysis:
+      steps:
+        - Define scope
+        - Collect data
+        - Apply framework
+        - Synthesize findings
+        - Formulate recommendations
+      governance: structured_output
+
+    decision_support:
+      steps:
+        - Identify decision point
+        - Generate 2-4 options
+        - Analyze tradeoffs
+        - Present with evidence
+        - Track outcome
+      governance: options_with_rationale
+
+  verification:
+    required:
+      - Evidence cited
+      - Tradeoffs explicit
+      - Actionables clear
+    recommended:
+      - Framework referenced
+      - Decision documented

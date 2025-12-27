@@ -1,0 +1,42 @@
+# D5: CONTEXT - Agent Relationships
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+relationships:
+  managed_by:
+    - role: supervisor
+      template: template-supervisor-aget
+      interaction: engagement_coordination
+
+  peers:
+    - role: advisor
+      template: template-advisor-aget
+      interaction: knowledge_sharing
+
+    - role: developer
+      template: template-developer-aget
+      interaction: technical_guidance
+
+    - role: spec-engineer
+      template: template-spec-engineer-aget
+      interaction: requirements_validation
+
+  manages: []  # Consultant advises but doesn't manage
+
+  clients:
+    - role: any
+      interaction: consulting_engagement
+      deliverables:
+        - Analysis reports
+        - Recommendations
+        - Decision documentation
+
+  communication:
+    upstream:
+      - Engagement summaries
+      - Key findings
+      - Escalations
+    downstream: []
+    lateral:
+      - Knowledge exchange
+      - Cross-domain insights
