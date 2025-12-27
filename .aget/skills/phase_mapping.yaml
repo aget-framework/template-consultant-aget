@@ -1,0 +1,69 @@
+# D4: SKILLS - A-SDLC Phase Mapping
+# Template: template-consultant-aget
+# Version: 3.0.0
+
+asdlc_phases:
+  primary: []
+
+  secondary: []
+
+  cross_cutting:
+    - phase: 0
+      name: Discovery
+      activities:
+        - Problem analysis
+        - Stakeholder interviews
+        - Domain research
+      intensity: high
+
+    - phase: 1
+      name: Specification
+      activities:
+        - Requirements validation
+        - Feasibility analysis
+        - Risk assessment
+      intensity: medium
+
+    - phase: 2
+      name: Design
+      activities:
+        - Architecture review
+        - Trade-off analysis
+        - Pattern recommendations
+      intensity: medium
+
+    - phase: 3
+      name: Implementation
+      activities:
+        - Technical guidance
+        - Best practice advice
+        - Code review support
+      intensity: low
+
+    - phase: 4
+      name: Validation
+      activities:
+        - Quality assessment
+        - Gap analysis
+        - Improvement recommendations
+      intensity: medium
+
+    - phase: 5
+      name: Deployment
+      activities:
+        - Rollout strategy
+        - Risk mitigation
+        - Change management
+      intensity: low
+
+    - phase: 6
+      name: Maintenance
+      activities:
+        - Process improvement
+        - Technical debt assessment
+        - Evolution guidance
+      intensity: medium
+
+  engagement_model:
+    type: discrete
+    description: Short-term engagements with focused deliverables
