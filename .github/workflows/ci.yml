@@ -126,19 +126,15 @@ jobs:
         # Validate JSON syntax
         python -c "import json; json.load(open('.aget/version.json'))"
 
-        # Validate template field
+        # Validate template field (v3.0: template replaces persona in version.json)
         TEMPLATE=$(python -c "import json; print(json.load(open('.aget/version.json'))['template'])")
         if [ "$TEMPLATE" != "consultant" ]; then
           echo "ERROR: template field must be 'consultant', got '$TEMPLATE'"
           exit 1
         fi
 
-        # Validate persona field
-        PERSONA=$(python -c "import json; print(json.load(open('.aget/version.json'))['persona'])")
-        if [ "$PERSONA" != "consultant" ]; then
-          echo "ERROR: persona field must be 'consultant', got '$PERSONA'"
-          exit 1
-        fi
+        # v3.0: persona is now in .aget/persona/ directory, not version.json
+        # Skip v2.x persona field check
 
         echo "✓ version.json validated"
 
