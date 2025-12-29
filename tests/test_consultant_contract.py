@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""v2.7.0 Consultant Contract Tests
+"""v2.7.0/v3.0.0 Consultant Contract Tests
 
 Tests that consultant agents maintain read-only boundaries and consultant pattern configuration.
 Enforces hybrid enforcement model: declarations + automated validation.
@@ -11,6 +11,7 @@ decision journals, options generation, evidence-based recommendations, low-conti
 Part of AGET framework consultant template validation.
 
 v2.10.0: Added template context detection - instance-only tests skipped on templates
+v3.0.0-beta: Added v3.0 schema compatibility for templates
 """
 
 import pytest
@@ -25,9 +26,19 @@ SKIP_TEMPLATE = pytest.mark.skipif(
     reason="Instance-only test: .memory/ directory is created at instantiation"
 )
 
+# Skip reason for v2.x-specific tests
+SKIP_TEMPLATE_V2 = pytest.mark.skipif(
+    is_template_context(),
+    reason="v2.x instance test: v3.0 templates use capabilities list instead of advisory_capabilities"
+)
 
-def test_instance_type_is_aget():
-    """Consultant agents must be read-only (instance_type == 'aget')."""
+
+def test_instance_type_valid():
+    """Consultant agents/templates must have valid instance_type.
+
+    v2.x: instance_type == 'aget'
+    v3.0: instance_type == 'template' with template field
+    """
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -36,8 +47,14 @@ def test_instance_type_is_aget():
         assert "instance_type" in data, "version.json missing instance_type field"
 
         instance_type = data["instance_type"]
-        assert instance_type == "aget", \
-            f"Consultant agents must be read-only: instance_type must be 'aget', got '{instance_type}'"
+        manifest_version = data.get("manifest_version", "2.0")
+
+        if manifest_version.startswith("3."):
+            assert instance_type == "template", \
+                f"v3.0 templates must have instance_type='template', got '{instance_type}'"
+        else:
+            assert instance_type == "aget", \
+                f"v2.x consultants must have instance_type='aget', got '{instance_type}'"
 
 
 def test_template_is_consultant():
@@ -72,23 +89,31 @@ def test_role_includes_advisor():
                 f"Consultant agents must include 'advisor' in roles, got: {roles}"
 
 
-def test_persona_is_consultant():
-    """Consultant agents must have persona set to 'consultant'."""
+def test_persona_or_template_is_consultant():
+    """Consultant agents must have persona (v2.x) or template (v3.0) set to 'consultant'."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
     with open(version_file) as f:
         data = json.load(f)
+        manifest_version = data.get("manifest_version", "2.0")
 
-        assert "persona" in data, "version.json missing persona field"
-        persona = data["persona"]
+        if manifest_version.startswith("3."):
+            # v3.0 uses template field
+            template = data.get("template")
+            assert template == "consultant", \
+                f"v3.0 consultant template must have template='consultant', got '{template}'"
+        else:
+            # v2.x uses persona field
+            assert "persona" in data, "version.json missing persona field"
+            persona = data["persona"]
+            assert persona == "consultant", \
+                f"v2.x consultants must have persona='consultant', got '{persona}'"
 
-        assert persona == "consultant", \
-            f"Consultant agents must have persona: 'consultant', got '{persona}'"
 
-
+@SKIP_TEMPLATE_V2
 def test_advisory_capabilities_read_only():
-    """Consultant agents must declare read_only capability as 'scoped'."""
+    """Consultant agents must declare read_only capability as 'scoped' (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -110,8 +135,9 @@ def test_advisory_capabilities_read_only():
             f"Consultants must use scoped permissions: advisory_capabilities.read_only must be 'scoped', got {read_only}"
 
 
+@SKIP_TEMPLATE_V2
 def test_no_action_capabilities():
-    """Consultant agents must not have unrestricted action capabilities."""
+    """Consultant agents must not have unrestricted action capabilities (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -137,8 +163,9 @@ def test_no_action_capabilities():
                     f"Consultant {cap} must be 'scoped', got {value}"
 
 
+@SKIP_TEMPLATE_V2
 def test_consultant_patterns_declared():
-    """Consultant agents must declare consultant_patterns section."""
+    """Consultant agents must declare consultant_patterns section (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -157,8 +184,9 @@ def test_consultant_patterns_declared():
             "consultant_patterns must be a dictionary"
 
 
+@SKIP_TEMPLATE_V2
 def test_consultant_patterns_complete():
-    """Consultant agents must declare all 6 consultant patterns."""
+    """Consultant agents must declare all 6 consultant patterns (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -210,8 +238,9 @@ def test_consultant_patterns_enabled():
                 f"consultant_patterns.{pattern_name}.enabled must be true (default), got {enabled}"
 
 
+@SKIP_TEMPLATE_V2
 def test_write_scope_declared():
-    """Consultant agents with 'scoped' permissions must declare write_scope section."""
+    """Consultant agents with 'scoped' permissions must declare write_scope section (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
@@ -256,8 +285,9 @@ def test_write_scope_paths_valid():
                 f"Allowed path '{path}' must be internal (.aget/* only) - external writes forbidden"
 
 
+@SKIP_TEMPLATE_V2
 def test_scoped_write_maintains_external_readonly():
-    """Scoped writes must explicitly forbid external file modification."""
+    """Scoped writes must explicitly forbid external file modification (v2.x instances only)."""
     version_file = Path(__file__).parent.parent / ".aget/version.json"
     assert version_file.exists(), "version.json not found"
 
