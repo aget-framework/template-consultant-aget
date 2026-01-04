@@ -2,7 +2,7 @@
   "north_star": "Provide expert domain knowledge and evidence-based recommendations that enable informed decision-making",
   "purpose": "Foundation for specialized consulting agent instances with domain expertise and analytical capabilities",
   "created": "2025-12-27",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "archetype": "Consultant",
   "theoretical_basis": "Extended Mind (external expertise), Transactive Memory (who knows what)"
 }
