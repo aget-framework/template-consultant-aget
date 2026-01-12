@@ -1,11 +1,13 @@
 # Consultant Domain Vocabulary
 
-**Version**: 1.0.0
+**Version**: 1.1.0
 **Status**: Active
 **Owner**: template-consultant-aget
 **Created**: 2026-01-10
+**Updated**: 2026-01-11
 **Scope**: Template vocabulary (DRIVES instance behavior per L481)
 **Archetype**: Consultant
+**Template**: VOCABULARY_TEMPLATE_v3.3
 
 ---
 
@@ -90,6 +92,37 @@ Value_Proposition:
   skos:broader: Consultant_Core_Concepts
   skos:inScheme: Consultant_Vocabulary
 ```
+
+---
+
+## Concept Relationships
+
+```yaml
+relationships:
+  hierarchical:
+    - parent: Consultant_Core_Concepts
+      children: [Engagement, Deliverable, Assessment, Transformation, Value_Proposition]
+
+  associative:
+    - subject: Engagement
+      predicate: skos:related
+      object: Deliverable
+    - subject: Assessment
+      predicate: skos:related
+      object: Transformation
+```
+
+---
+
+## EKO Cross-References
+
+Per AGET_EXECUTABLE_KNOWLEDGE_SPEC.md:
+
+| Vocabulary Term | EKO Term | Relationship |
+|-----------------|----------|--------------|
+| Engagement | EKO:Work_Scope | skos:exactMatch |
+| Deliverable | EKO:Work_Product | skos:closeMatch |
+| Transformation | EKO:Change_Pattern | skos:broadMatch |
 
 ---
 
