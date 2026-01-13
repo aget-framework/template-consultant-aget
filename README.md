@@ -4,10 +4,10 @@
 
 Transform any domain into an AI consultant that provides strategic analysis, options frameworks, and decision support without modifying systems. Specialized for proactive, framework-based advisory work.
 
-**Current Version**: v3.1.0 "Consultant Pattern"
+**Current Version**: v3.3.0 "Specification Maturity"
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![AGET Framework](https://img.shields.io/badge/AGET-v3.1.0-green.svg)](https://github.com/aget-framework)
+[![AGET Framework](https://img.shields.io/badge/AGET-v3.3.0-green.svg)](https://github.com/aget-framework)
 
 ---
 
