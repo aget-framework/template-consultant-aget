@@ -1,0 +1,250 @@
+# ONTOLOGY: Consultant Archetype v1.0
+# SKOS-aligned concept definitions for client engagement and advisory services
+#
+# Archetype: consultant
+# Created: 2026-02-14
+# Author: private-aget-framework-AGET
+# Format: SKOS-inspired YAML (aget-framework convention)
+# Concepts: 6
+# Project: ARC-001 (Archetype Customization v3.5)
+
+apiVersion: aget.framework/v1
+kind: OntologySpec
+metadata:
+  name: consultant-archetype-ontology
+  version: 1.0.0
+  created: 2026-02-14
+  author: private-aget-framework-AGET
+  archetype: consultant
+  description: >
+    Formal vocabulary for consultant archetype agents. Defines concepts for
+    client engagement, proposal development, and advisory delivery.
+  extends: ONTOLOGY_personal_ai_systems_v1.0.yaml
+
+# ============================================================================
+# CONCEPT SCHEME
+# ============================================================================
+
+conceptScheme:
+  uri: aget:ontology/consultant
+  prefLabel: Consultant Archetype Ontology
+  definition: >
+    A vocabulary for describing consultant agent capabilities including
+    client assessment, engagement proposals, and advisory service delivery.
+  hasTopConcept:
+    - aget:archetype/consultant/Client
+    - aget:archetype/consultant/Engagement
+    - aget:archetype/consultant/Proposal
+  relatedScheme:
+    - aget:ontology/personal-ai-systems
+
+# ============================================================================
+# CONCEPTS
+# ============================================================================
+
+concepts:
+
+  # --------------------------------------------------------------------------
+  # Concept: Client
+  # --------------------------------------------------------------------------
+  - id: CON-001
+    uri: aget:archetype/consultant/Client
+    prefLabel: Client
+    altLabel:
+      - Customer
+      - Stakeholder
+      - Engagement_Party
+    definition: >
+      An entity receiving consulting services. Clients have needs, constraints,
+      and objectives that the consultant addresses through engagement.
+    scopeNote: >
+      Understanding client context is prerequisite to effective consulting.
+      Client assessment informs proposal scope and approach.
+    theoreticalBasis:
+      primary: Consulting Methodology
+      source: Management Consulting
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Engagement
+      - aget:archetype/consultant/Client_Need
+    inScheme: aget:ontology/consultant
+    cluster: Client Management
+
+  # --------------------------------------------------------------------------
+  # Concept: Client_Need
+  # --------------------------------------------------------------------------
+  - id: CON-002
+    uri: aget:archetype/consultant/Client_Need
+    prefLabel: Client_Need
+    altLabel:
+      - Requirement
+      - Pain_Point
+      - Objective
+    definition: >
+      A problem, gap, or objective that the client seeks to address
+      through consulting engagement.
+    scopeNote: >
+      Needs discovery is critical for engagement scoping. Needs may be
+      explicit (stated) or implicit (discovered through assessment).
+    theoreticalBasis:
+      primary: Needs Analysis
+      source: Consulting Discovery
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Client
+      - aget:archetype/consultant/Proposal
+    inScheme: aget:ontology/consultant
+    cluster: Client Management
+
+  # --------------------------------------------------------------------------
+  # Concept: Engagement
+  # --------------------------------------------------------------------------
+  - id: CON-003
+    uri: aget:archetype/consultant/Engagement
+    prefLabel: Engagement
+    altLabel:
+      - Project
+      - Contract
+      - Assignment
+    definition: >
+      A bounded consulting relationship with defined scope, deliverables,
+      timeline, and success criteria.
+    scopeNote: >
+      Engagements have lifecycle: discovery, proposal, execution, closeout.
+      Scope management prevents engagement drift.
+    theoreticalBasis:
+      primary: Project Management
+      source: Consulting Lifecycle
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Client
+      - aget:archetype/consultant/Proposal
+      - aget:archetype/consultant/Deliverable
+    enumValues:
+      - Discovery     # Initial assessment phase
+      - Active        # Execution in progress
+      - Closeout      # Wrapping up
+      - Completed     # Successfully finished
+    inScheme: aget:ontology/consultant
+    cluster: Engagement Management
+
+  # --------------------------------------------------------------------------
+  # Concept: Proposal
+  # --------------------------------------------------------------------------
+  - id: CON-004
+    uri: aget:archetype/consultant/Proposal
+    prefLabel: Proposal
+    altLabel:
+      - Statement_of_Work
+      - SOW
+      - Engagement_Proposal
+    definition: >
+      A formal document outlining proposed scope, approach, deliverables,
+      timeline, and terms for a consulting engagement.
+    scopeNote: >
+      Proposals translate client needs into actionable engagement plan.
+      Approval converts proposal to active engagement.
+    theoreticalBasis:
+      primary: Business Development
+      source: Sales Process
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Client_Need
+      - aget:archetype/consultant/Engagement
+    inScheme: aget:ontology/consultant
+    cluster: Engagement Management
+
+  # --------------------------------------------------------------------------
+  # Concept: Deliverable
+  # --------------------------------------------------------------------------
+  - id: CON-005
+    uri: aget:archetype/consultant/Deliverable
+    prefLabel: Deliverable
+    altLabel:
+      - Work_Product
+      - Output
+      - Artifact
+    definition: >
+      A tangible output produced during engagement: reports, recommendations,
+      implementations, or knowledge transfer materials.
+    scopeNote: >
+      Deliverables are evidence of value provided. Quality affects client
+      satisfaction and future engagement potential.
+    theoreticalBasis:
+      primary: Consulting Deliverables
+      source: Project Management
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Engagement
+    inScheme: aget:ontology/consultant
+    cluster: Engagement Management
+
+  # --------------------------------------------------------------------------
+  # Concept: Advisory
+  # --------------------------------------------------------------------------
+  - id: CON-006
+    uri: aget:archetype/consultant/Advisory
+    prefLabel: Advisory
+    altLabel:
+      - Recommendation
+      - Guidance
+      - Counsel
+    definition: >
+      Expert guidance provided to clients based on assessment of their
+      situation, needs, and options.
+    scopeNote: >
+      Advisory is a key consulting value proposition. Quality depends on
+      expertise, objectivity, and contextual understanding.
+    theoreticalBasis:
+      primary: Expert Advisory
+      source: Consulting Practice
+    broader: null
+    narrower: null
+    related:
+      - aget:archetype/consultant/Client
+      - aget:archetype/consultant/Deliverable
+    inScheme: aget:ontology/consultant
+    cluster: Client Management
+
+# ============================================================================
+# RELATIONSHIPS
+# ============================================================================
+
+relationships:
+  - subject: aget:archetype/consultant/Client_Need
+    predicate: skos:related
+    object: aget:archetype/consultant/Client
+    note: Clients have needs
+
+  - subject: aget:archetype/consultant/Engagement
+    predicate: skos:related
+    object: aget:archetype/consultant/Client
+    note: Engagements serve clients
+
+  - subject: aget:archetype/consultant/Proposal
+    predicate: skos:related
+    object: aget:archetype/consultant/Engagement
+    note: Proposals define engagements
+
+# ============================================================================
+# METADATA
+# ============================================================================
+
+provenance:
+  project: ARC-001
+  created: 2026-02-14
+  author: private-aget-framework-AGET
+  methodology: Derived from consultant archetype CONSULTANT_SPEC.md
+
+validation:
+  conceptCount: 6
+  clusters: 2
+  theoreticalGrounding: 100%
+  skosCompliance: partial
+
+# End of ONTOLOGY_consultant.yaml
