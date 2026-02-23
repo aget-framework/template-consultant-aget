@@ -16,6 +16,8 @@ The Consultant archetype delivers **solutions-focused engagement**. Unlike react
 
 **For evaluators**: If you need an AI that can assess complex situations and propose structured solutions like a professional consultant, the Consultant archetype provides engagement-ready advisory support.
 
+**Domain knowledge that compounds**: Consultant agents build persistent understanding of your engagement history — client patterns, successful frameworks, and proposal outcomes. Unlike tools that start fresh each session, your agent accumulates consulting context that makes each assessment more targeted and each proposal more effective.
+
 ---
 
 ## Skills
@@ -92,6 +94,7 @@ python3 -m pytest tests/ -v
 | **Output** | Recommendations | Structured proposals |
 | **Focus** | Single questions | End-to-end engagement |
 | **Format** | Informal | Professional, client-ready |
+| **Domain memory** | Starts fresh each session | Accumulates engagement expertise over time |
 
 ---
 
