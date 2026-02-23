@@ -60,8 +60,8 @@ jobs:
           VIOLATIONS=$((VIOLATIONS + 1))
         fi
 
-        # Check for personal identifiers
-        if grep -ri "Gabor\|aget-framework" \
+        # Check for personal identifiers (PV-001: flag real names, PV-002/003: allow org refs)
+        if grep -ri "Gabor" \
           README.md AGENTS.md .aget/version.json docs/CAPABILITIES.md docs/COMPARISON_MATRIX.md docs/USAGE_GUIDE.md 2>/dev/null; then
           echo "ERROR: Found personal identifiers in public files"
           VIOLATIONS=$((VIOLATIONS + 1))
