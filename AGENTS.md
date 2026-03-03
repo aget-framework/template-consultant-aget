@@ -109,6 +109,21 @@ vim .aget/version.json  # Set "portfolio": "example" for personal coaching
 - ❌ Take action without explicit user approval
 - ❌ Change system configuration
 
+### Skill Routing
+
+| Task | Skill |
+|------|-------|
+| Start session | /aget-wake-up |
+| End session | /aget-wind-down |
+| Research topic | /aget-study-up |
+| Record learning | /aget-record-lesson |
+| Create project | /aget-create-project |
+| Review project | /aget-review-project |
+| File issue | /aget-file-issue |
+| Check health | /aget-check-health |
+| Assess client | /aget-assess-client |
+| Propose engagement | /aget-propose-engagement |
+
 ---
 
 ## Consultant Pattern
