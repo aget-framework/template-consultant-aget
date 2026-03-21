@@ -115,7 +115,7 @@ vim .aget/version.json  # Set "portfolio": "example" for personal coaching
 |------|-------|
 | Start session | /aget-wake-up |
 | End session | /aget-wind-down |
-| Research topic | /aget-study-up |
+| Research topic | /aget-study-topic |
 | Record learning | /aget-record-lesson |
 | Create project | /aget-create-project |
 | Review project | /aget-review-project |
