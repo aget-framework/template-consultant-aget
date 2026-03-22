@@ -120,6 +120,7 @@ vim .aget/version.json  # Set "portfolio": "example" for personal coaching
 | Create project | /aget-create-project |
 | Review project | /aget-review-project |
 | File issue | /aget-file-issue |
+| Enhance spec | /aget-enhance-spec |
 | Check health | /aget-check-health |
 | Assess client | /aget-assess-client |
 | Propose engagement | /aget-propose-engagement |
