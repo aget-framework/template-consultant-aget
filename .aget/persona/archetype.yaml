@@ -42,6 +42,8 @@ archetype:
       enabled: true
       description: Recommendations cite evidence and data
 
+  governance_intensity: moderate
+
   theoretical_basis:
     primary: Extended Mind (external expertise repository)
     secondary: Transactive Memory (organizational knowledge network)

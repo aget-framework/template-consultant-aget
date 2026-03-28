@@ -1027,9 +1027,8 @@ Ready for questions.
 
 **Step 1: Clone Template**
 ```bash
-cd ~/github/aget-framework
-cp -r template-advisor-aget ~/github/my-{domain}-advisor-aget
-cd ~/github/my-{domain}-advisor-aget
+git clone https://github.com/aget-framework/template-advisor-aget.git my-{domain}-advisor-aget
+cd my-{domain}-advisor-aget
 ```
 
 **Step 2: Update version.json**
