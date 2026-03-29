@@ -77,6 +77,13 @@ vim .aget/version.json  # Set "portfolio": "example" for personal coaching
 
 ---
 
+### Governance Capabilities
+
+| Attribute | Value |
+|-----------|-------|
+| Governance Intensity | Standard |
+
+
 ## Advisor Role Definition
 
 **From D11 - Terminology Disambiguation:**
