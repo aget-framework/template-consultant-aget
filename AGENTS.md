@@ -484,7 +484,7 @@ Result: 2 minutes to correct solution
 **The Boundary:**
 ```
 INTERNAL STATE (CAN write):      EXTERNAL SYSTEMS (CANNOT write):
-.aget/sessions/                  ./src/** (user's code)
+sessions/                  ./src/** (user's code)
 .aget/commitments/               ./docs/** (user's docs)
 .aget/client_progress/           ./data/** (user's data)
 .aget/context/                   /** (everything else)
@@ -502,7 +502,7 @@ Advisors track five types of internal state:
 #### 1. Session History (Required - All Personas)
 **Purpose**: Continuity across conversations
 
-**Location**: `.aget/sessions/SESSION_YYYY-MM-DD_HH-MM.md`
+**Location**: `sessions/SESSION_YYYY-MM-DD_HH-MM.md`
 
 **Format**:
 ```yaml
@@ -679,7 +679,7 @@ When user says "wake up":
 3. Display agent context + capabilities
 
 **Enhanced with internal state:**
-4. Use Glob to find session files: `.aget/sessions/SESSION_*.md`
+4. Use Glob to find session files: `sessions/SESSION_*.md`
 5. Use Glob to check for commitments: `.aget/commitments/active.yaml`
 6. Use Read to load commitment/progress data if files exist
 7. Parse data silently, present formatted summary only
@@ -691,7 +691,7 @@ When user says "wake up":
 **Implementation (quieter than bash ls):**
 ```python
 # Step 1: Check for sessions
-Glob: .aget/sessions/SESSION_*.md
+Glob: sessions/SESSION_*.md
 IF files found:
     Parse most recent filename for date
     Display: "Last session: {date} ({days} ago)"
@@ -791,7 +791,7 @@ When user says "wind down":
 **Step 1: Write Internal State** (automatic)
 ```python
 # ✅ ALLOWED - Write session file
-Write: .aget/sessions/SESSION_{date}_{time}.md
+Write: sessions/SESSION_{date}_{time}.md
 content: session_summary_with_yaml_frontmatter
 
 # ✅ ALLOWED - Update progress (if applicable)
@@ -816,7 +816,7 @@ Commitments: {commitments}
 
 **Step 3: Show Completion**
 ```
-✅ Session saved to .aget/sessions/SESSION_2025-10-10_14-00.md
+✅ Session saved to sessions/SESSION_2025-10-10_14-00.md
 ✅ Updated commitment tracking (1 new commitment)
 ✅ Progress tracked (+1 confidence in strategic thinking)
 
@@ -859,16 +859,16 @@ Progress since last month: +2 confidence, +1 clarity
 
 **Bad:**
 ```
-I'd like to save this session to .aget/sessions/. Should I proceed?
+I'd like to save this session to sessions/. Should I proceed?
 ```
 
 **Why it fails**: Advisors have permission to write internal state. Asking creates unnecessary friction.
 
 **Good:**
 ```
-[Directly writes to .aget/sessions/SESSION_2025-10-10.md]
+[Directly writes to sessions/SESSION_2025-10-10.md]
 
-✅ Session saved to .aget/sessions/SESSION_2025-10-10.md
+✅ Session saved to sessions/SESSION_2025-10-10.md
 ```
 
 ---
@@ -878,7 +878,7 @@ I'd like to save this session to .aget/sessions/. Should I proceed?
 **Bad:**
 ```bash
 # Advisor attempts git commit
-Bash: git add .aget/sessions/ && git commit -m "Save session"
+Bash: git add sessions/ && git commit -m "Save session"
 
 ❌ Error: Advisors cannot commit changes
 ```
@@ -887,10 +887,10 @@ Bash: git add .aget/sessions/ && git commit -m "Save session"
 
 **Good:**
 ```
-✅ Session saved to .aget/sessions/SESSION_2025-10-10.md
+✅ Session saved to sessions/SESSION_2025-10-10.md
 
 📋 To persist this work:
-   git add .aget/sessions/
+   git add sessions/
    git commit -m "coaching: Session 2025-10-10 summary"
 ```
 
@@ -928,12 +928,12 @@ content: detailed_plan
 # tests/test_internal_state_contract.py
 
 def test_sessions_directory_exists():
-    """Verify .aget/sessions/ directory exists"""
+    """Verify sessions/ directory exists"""
     assert Path(".aget/sessions").exists()
 
 def test_sessions_directory_has_readme():
     """Verify session format documented"""
-    assert Path(".aget/sessions/README.md").exists()
+    assert Path("sessions/README.md").exists()
 
 def test_wind_down_creates_session_file():
     """Verify wind down saves session automatically"""
