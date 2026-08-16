@@ -2,7 +2,7 @@
 
 > Engage clients and propose solutions with structured advisory frameworks
 
-**Version**: v3.30.0 | **Archetype**: Consultant | **Skills**: 2 specialized + 15 universal
+**Version**: v3.31.0 | **Archetype**: Consultant | **Skills**: 2 specialized + 15 universal
 
 ---
 
