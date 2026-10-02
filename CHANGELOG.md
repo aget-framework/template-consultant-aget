@@ -1,5 +1,15 @@
 # Changelog
 
+## [3.36.0] - 2026-10-03 - "Fleet migration kit for supervisors"
+
+### Fixed
+- `scripts/study_topic.py` no longer prints "novel topic" when the score floor suppressed every hit: the zero-result branch now reports that nothing cleared the score floor and states that this is not a novel-topic verdict.
+
+### Changed
+- Advanced the template's framework identity and migration history to v3.36.0.
+- The release's migration kit for supervisors lives in the core repository (`scripts/migration_kit/`). It is not a template payload, and this template does not carry it.
+- Not in this release: the repaired `scripts/close_authorization_guard.py`. This template still ships the guard at its 3.34.0 version; the repair is deferred to the next release. See `handoffs/CORRECTIONS_v3.35.0.md` rows 4 and 5 in `aget-framework/aget` for what to do until then.
+
 ## [3.35.1] - 2026-10-04 - "Weekly train"
 
 ### Fixed
