@@ -10,7 +10,7 @@ template:
   description: Consulting template for domain expertise and recommendations
   version: 3.36.0
   created: "2025-12-27"
-  author: private-aget-framework-AGET
+  author: aget-framework
   inherits_from: template-advisor-aget
 
 composition:
