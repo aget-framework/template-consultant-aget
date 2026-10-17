@@ -8,16 +8,16 @@ on:
 
 jobs:
   contract-tests:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         python-version: ['3.10', '3.11', '3.12', '3.13']
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -41,10 +41,10 @@ jobs:
         echo "✓ Contract test count validated: 61 tests"
 
   privacy-validation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Check for private instance references
       run: |
@@ -81,14 +81,14 @@ jobs:
         echo "✅ Privacy validation passed: No violations found"
 
   template-validation:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [contract-tests, privacy-validation]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v7
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v7
       with:
         python-version: '3.11'
 
@@ -154,7 +154,7 @@ jobs:
         echo "✓ CLAUDE.md symlink validated"
 
   all-checks-passed:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [contract-tests, privacy-validation, template-validation]
 
     steps:
